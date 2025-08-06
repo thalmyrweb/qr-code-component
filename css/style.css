@@ -1,17 +1,24 @@
+/* Import Google Fonts - Must be at the top */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
+/* CSS Custom Properties (Variables) for colors, spacing, and font sizes */
 :root {
   --slate-900: #1f314f;
   --slate-500: #68778d;
   --slate-300: #d5e1ef;
   --white: #ffffff;
+
+  /* Spacing variables using rem for responsiveness */
   --spacing-40: 2.5rem; /* 40px */
   --spacing-24: 1.5rem; /* 24px */
-  --spacing-16: 1rem;   /* 16px */
-  --text-preset-1: 1.25rem; /* 20px */
-  --text-preset-2: 0.9375rem; /* 15px */
+  --spacing-16: 1rem; /* 16px */
+
+  /* Responsive font sizes using clamp() */
+  --text-preset-1: clamp(1rem, 2vw, 1.25rem); /* Between 16px and 20px */
+  --text-preset-2: clamp(0.8rem, 1vw, 0.9375rem); /* Between 13px and 15px */
 }
 
+/* Global box-sizing and reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,39 +27,45 @@
   font-optical-sizing: auto;
 }
 
+/* Body background color */
 body {
   background-color: var(--slate-300);
 }
 
+/* Main container - centers content and limits max width */
 .main-container {
   min-height: 100vh;
   width: 100%;
-  max-width: 75rem; /* معادل 1200px */
+  max-width: 75rem; /* 1200px */
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Card container styling */
 .card-container {
-  width: 20rem; /* معادل 320px */
-  height: 31.1875rem; /* معادل 499px */
+  width: 20rem; /* 320px */
+  height: 31.1875rem; /* 499px */
   border-radius: 20px;
   background-color: var(--white);
   overflow: hidden;
   padding: var(--spacing-16);
 }
 
+/* Card image styling */
 .card-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
+/* Card content margins */
 .card-content {
   margin: 0 var(--spacing-16);
 }
 
+/* Card title styling */
 .card-title {
   font-size: var(--text-preset-1);
   color: var(--slate-900);
@@ -61,6 +74,7 @@ body {
   margin: var(--spacing-24) 0;
 }
 
+/* Card paragraph styling */
 .card-paragraph {
   font-size: var(--text-preset-2);
   color: var(--slate-500);
@@ -69,22 +83,24 @@ body {
   margin: var(--spacing-24) 0;
 }
 
-/* 🎬 Personal animation starts here */
-
+/* Attribution text styling */
 .attribution {
   position: absolute;
   bottom: 10px;
-  font-size: 11px;
+  font-size: 0.6875rem; /* 11px */
 }
 
+/* Link styling */
 .my-link {
   font-weight: 1000;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 0.8125rem; /* 13px */
+  color: var(--slate-900);
 }
 
+/* Shiny text animation styling */
 .shiny-text {
-  color: #fff;
+  color: var(--white);
   background: linear-gradient(
     90deg,
     var(--slate-900),
@@ -97,6 +113,7 @@ body {
   animation: shine 5s linear infinite;
 }
 
+/* Keyframes for shiny text animation */
 @keyframes shine {
   0% {
     background-position: -200% 0;
@@ -106,8 +123,9 @@ body {
   }
 }
 
+/* Disable animation for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .shiny-text {
-    animation: none !important;
+    animation: none;
   }
 }
