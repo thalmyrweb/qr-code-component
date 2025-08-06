@@ -1,16 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
 :root {
   --slate-900: #1f314f;
   --slate-500: #68778d;
   --slate-300: #d5e1ef;
   --white: #ffffff;
-  --spacing-40: 40px;
-  --spacing-24: 24px;
-  --spacing-16: 16px;
-  --text-preset-1: 20px;
-  --text-preset-2: 15px;
+  --spacing-40: 2.5rem; /* 40px */
+  --spacing-24: 1.5rem; /* 24px */
+  --spacing-16: 1rem;   /* 16px */
+  --text-preset-1: 1.25rem; /* 20px */
+  --text-preset-2: 0.9375rem; /* 15px */
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -27,7 +27,7 @@ body {
 .main-container {
   min-height: 100vh;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75rem; /* معادل 1200px */
   margin: auto;
   display: flex;
   align-items: center;
@@ -35,8 +35,8 @@ body {
 }
 
 .card-container {
-  width: 320px;
-  height: 499px;
+  width: 20rem; /* معادل 320px */
+  height: 31.1875rem; /* معادل 499px */
   border-radius: 20px;
   background-color: var(--white);
   overflow: hidden;
@@ -103,5 +103,11 @@ body {
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-text {
+    animation: none !important;
   }
 }
